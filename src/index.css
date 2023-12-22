@@ -1,0 +1,10 @@
+header{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 2%;
+  gap: 10px;
+}
+header img{
+  width: 5%;
+  height: 10vh;
+}
