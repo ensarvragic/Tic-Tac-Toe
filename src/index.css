@@ -1,3 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #fcd256;
+  background-image: url("bg-pattern.png");
+  background-repeat: repeat;
+}
+h1 {
+  font-size: 3rem;
+  margin: 0 auto 3rem auto;
+  color: #3f3b00;
+}
+
+#game-container {
+  max-width: 45rem;
+  margin: 3rem auto;
+  padding: 3rem;
+  background: linear-gradient(#383624, #282617);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+#players {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+#players li {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  border: 2px solid transparent;
+}
+.player-name {
+  display: inline-block;
+  width: 10rem;
+  font-size: 1rem;
+  color: #e1dec7;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.player-symbol {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: #e1dec7;
+}
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 header{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
@@ -10,3 +69,4 @@ header img{
   margin: 3rem auto 1rem auto;
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
 }
+
