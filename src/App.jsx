@@ -4,6 +4,7 @@ function App() {
 
   return (
     <>
+    <p>Coming soon...</p>
     </>
   )
 }
