@@ -17,7 +17,7 @@ export default function Player({ initialName, symbol }) {
 
   if(isEditing) {
     editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>
-    // Btn za SAVE
+    // Btn za SAVEE
   }
 
   return (
