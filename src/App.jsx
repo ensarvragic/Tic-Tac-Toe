@@ -1,5 +1,6 @@
 import "./App.css";
 import Player from "./components/Player";
+import GameBoard from "./components/GameBoard";
 
 function App() {
   return (
