@@ -10,7 +10,7 @@ function App() {
           <Player name='Ensar' symbol='1'/>
           <Player name='Fahret' symbol='2'/>
         </ol>
-        GAME BOARD
+        <GameBoard/>
       </div>
       LOG
     </main>
