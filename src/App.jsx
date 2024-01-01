@@ -2,6 +2,7 @@ import "./App.css";
 import Player from "./components/Player";
 import GameBoard from "./components/GameBoard";
 import { useState } from "react";
+import GameOver from "./components/GameOver";
 import Log from "./components/Log";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
 
@@ -82,7 +83,7 @@ function App() {
             isActive={activePlayer === "O"}
           />
         </ol>
-        {winner && <p>You won, {winner}!</p>}
+        {winner && <GameOver winner={winner}/>}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
       <Log turns={gameTurns} />
