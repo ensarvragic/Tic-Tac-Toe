@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Player({
   initialName,
@@ -8,9 +8,14 @@ export default function Player({
 }) {
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
+  const inputRef = useRef(null); 
 
   const handleEdit = () => {
-    setIsEditing((editing) => !editing);
+    setIsEditing(true);
+  };
+
+  const handleSave = () => {
+    setIsEditing(false);
     onChangeName(symbol, playerName);
   };
 
@@ -18,14 +23,36 @@ export default function Player({
     setPlayerName(event.target.value);
   };
 
-  let editablePlayerName = <span className="player-name">{playerName}</span>;
-  // Btn za EDIT
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSave();
+    }
+  };
+
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
+
+  let editablePlayerName = (
+    <span className="player-name" onClick={handleEdit}>
+      {playerName}
+    </span>
+  );
 
   if (isEditing) {
     editablePlayerName = (
-      <input type="text" required value={playerName} onChange={handleChange} />
+      <input
+        ref={inputRef}
+        type="text"
+        value={playerName}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onBlur={handleSave}
+        required
+      />
     );
-    // Btn za SAVEE
   }
 
   return (
@@ -34,7 +61,7 @@ export default function Player({
         {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleEdit}>
+      <button onClick={isEditing ? handleSave : handleEdit}>
         {!isEditing ? "Edit" : "Save"}
       </button>
     </li>

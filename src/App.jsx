@@ -77,6 +77,7 @@ function App() {
   function handleRestart() {
     setGameTurns([]);
   }
+
   function handlePlayerNameChange(symbol, newName) {
     setPlayers((prevPlayers) => {
       return {
